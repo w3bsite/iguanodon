@@ -3,5 +3,6 @@
     "Deno",
     "deps",
     "Injectables"
-  ]
+  ],
+  "deno.enable": true
 }
