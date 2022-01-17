@@ -1,0 +1,29 @@
+scripts:
+  test:
+    desc: Run Deno tests
+    cmd:
+      - deno test -c ./deno.json
+  fmt:
+    desc: Format Deno code
+    cmd:
+      - deno fmt -c ./deno.json src test
+  lint:
+    desc: Run Deno lint
+    cmd:
+     - deno lint -c ./deno.json src test
+  style: 
+    desc: Run both lint and fmt
+    gitHook: pre-commit
+    cmd:
+      - vr fmt
+      - vr lint
+  cache:
+    desc: Cache dependencies from deps.ts
+    cmd:
+      - deno cache ./deps.ts
+  check:
+    desc: Run both tests and style
+    gitHook: pre-push
+    cmd:
+      - vr style
+      - vr test
