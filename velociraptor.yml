@@ -23,7 +23,6 @@ scripts:
       - deno cache ./deps.ts
   check:
     desc: Run both tests and style
-    gitHook: pre-push
     cmd:
       - vr style
       - vr test
